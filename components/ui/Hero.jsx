@@ -35,11 +35,11 @@ const Hero = () => {
                 <Button
                     text={"Get your Wally"}
                     onBtnClick={()=> router.push('/auth')}
-                    btnStyle={"bg-transparent bg-[#ABF600] rounded-[10px]  text-[#000] md:w-[200px] w-full font-[500] px-4 py-3 md:text-[20px]"}
+                    btnStyle={"bg-lime-400 rounded-[10px]  text-[#000] md:w-[200px] w-full font-[500] px-4 py-3 md:text-[20px]"}
                 />
                 <Button 
                     text={"Learn More"}
-                    btnStyle={"bg-transparent bg-white rounded-[10px]  text-black md:w-[200px] w-full font-[500] px-4 py-3 md:text-[20px]"}
+                    btnStyle={"bg-white rounded-[10px]  text-black md:w-[200px] w-full font-[500] px-4 py-3 md:text-[20px]"}
                 />
             </div>
         </div>

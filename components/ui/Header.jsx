@@ -32,7 +32,7 @@ const Header = ()=>{
                     <Button 
                         text={"Get your Wally"}
                         onBtnClick={()=> router.push('/auth')}
-                        btnStyle={"bg-transparent bg-[#ABF600] rounded-[10px] text-[#000] font-[500] md:px-4 py-3 md:text-[20px]"}
+                        btnStyle={"bg-lime-400 rounded-[10px] text-[#000] font-[500] md:px-4 py-3 md:text-[20px]"}
                     />
                 </div>
             </div>
