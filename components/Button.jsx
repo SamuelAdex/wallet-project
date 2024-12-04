@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Button = ({
   type,
@@ -11,18 +12,19 @@ const Button = ({
   imgPath,
   btnStyle,
   imgStyle,
-  loading,
-  btn_type,
+  loading
 }) => {
+
+  const router = useRouter()
+
   return (
     <>
       {type == "outline" ? (
         <button
-          type={btn_type}
-          className={`border-2 flex items-center justify-center p-2 font-[500] gap-1 border-black text-black text-[13px] rounded-lg ${btnStyle}`}
+          className={`border-2 flex items-center justify-center font-[500] gap-1 border-black text-black text-[13px] ${btnStyle}`}
           onClick={onBtnClick}
         >
-          {loading === true ? (
+          {loading == true ? (
             <Loader />
           ) : (
             <>
@@ -30,15 +32,7 @@ const Button = ({
                 <span>{iconName}</span>
               ) : (
                 <>
-                  {imgPath && (
-                    <Image
-                      className={`${imgStyle}`}
-                      width={24}
-                      height={24}
-                      src={imgPath}
-                      alt=""
-                    />
-                  )}
+                  {imgPath && <Image className={`${imgStyle}`} width={24} height={24} src={imgPath} alt="" />}
                 </>
               )}
               {text}
@@ -47,21 +41,18 @@ const Button = ({
         </button>
       ) : (
         <button
-          type={btn_type}
-          className={`flex items-center justify-center gap-1 p-2 font-[500] text-center text-[13px] rounded-lg ${btnStyle}`}
+          className={`flex items-center justify-center gap-1 font-[500] text-center text-[13px] ${btnStyle}`}
           onClick={onBtnClick}
         >
-          {loading === true ? (
+          {loading == true ? (
             <Loader />
           ) : (
-            <>
+            <>  
               {iconName ? (
                 <span>{iconName}</span>
-              ) : (
+              ): (
                 <>
-                  {imgPath && (
-                    <Image src={imgPath} width={24} height={24} alt="" />
-                  )}
+                  {imgPath && <Image src={imgPath} width={24} height={24} alt="" />}
                 </>
               )}
               {text}
@@ -74,6 +65,7 @@ const Button = ({
 };
 
 export default Button;
+
 
 export function Loader(){
   return (
