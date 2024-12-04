@@ -2,13 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '../Button';
 import { useRouter } from 'next/navigation';
 import { IoFingerPrint } from "react-icons/io5";
+import { AppContext } from '@/context/AppContext';
 
 const Header = ()=>{
     const router = useRouter();
+    const {userInfo} = useContext(AppContext);
 
     return (
         <header className='w-full p-6 fixed top-0 z-10 backdrop-blur-md'>
@@ -22,19 +24,23 @@ const Header = ()=>{
                     <Link href={"/wallet"}>Wallet</Link>
                     <Link href={"#"}>Support</Link>
                 </div>
+                    {!userInfo?.token && (
                 <div className="flex items-center gap-5">
-                    <Button 
-                        text={"Login BitWally"}
-                        iconName={<IoFingerPrint className='text-white text-2xl' />}
-                        onBtnClick={()=> router.push('/auth')}
-                        btnStyle={"bg-transparent text-white font-[500] md:text-[20px]"}
-                    />
-                    <Button 
-                        text={"Get your Wally"}
-                        onBtnClick={()=> router.push('/auth')}
-                        btnStyle={"bg-lime-400 rounded-[10px] text-[#000] font-[500] md:px-4 py-3 md:text-[20px]"}
-                    />
+                        <>
+                            <Button 
+                                text={"Login BitWally"}
+                                iconName={<IoFingerPrint className='text-white text-2xl' />}
+                                onBtnClick={()=> router.push('/auth')}
+                                btnStyle={"bg-transparent text-white font-[500] md:text-[20px]"}
+                            />
+                            <Button 
+                                text={"Get your Wally"}
+                                onBtnClick={()=> router.push('/auth')}
+                                btnStyle={"bg-lime-400 rounded-[10px] text-[#000] font-[500] md:px-4 py-3 md:text-[20px]"}
+                            />
+                        </>
                 </div>
+                    )}
             </div>
         </header>
     )

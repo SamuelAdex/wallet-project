@@ -99,6 +99,9 @@ const WalletPage = () => {
   return (
     <div className='grid place-items-center p-3 md:h-[100vh] bg-[#000] relative '>
 
+        <div className='absolute flex gap-3 rounded-[30px] top-3 left-6'>
+            <div className='cursor-pointer text-white text-[32px] font-[700]' onClick={()=> router.push("/")}>BitWally</div>
+        </div>
         <div className='absolute flex items-center gap-3 rounded-[30px] p-3 z-10 h-[50px] bg-white top-3 right-6'>
             <div className=''>{userData?.email?.slice(0,5)+"..."}</div>
             <MdLogout className='cursor-pointer text-black text-3xl' onClick={logout} />
