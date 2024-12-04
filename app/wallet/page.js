@@ -97,14 +97,14 @@ const WalletPage = () => {
 
 
   return (
-    <div className='grid place-items-center p-3 md:h-[100vh] bg-gradient-to-tr to-[#2B293D] from-[#0d0b1e] relative '>
+    <div className='grid place-items-center p-3 md:h-[100vh] bg-[#000] relative '>
 
         <div className='absolute flex items-center gap-3 rounded-[30px] p-3 z-10 h-[50px] bg-white top-3 right-6'>
             <div className=''>{userData?.email?.slice(0,5)+"..."}</div>
             <MdLogout className='cursor-pointer text-black text-3xl' onClick={logout} />
         </div>
         {/* {isLoading && <Loader />} */}
-        <div className='md:w-[884px] w-full rounded-[32px] backdrop-blur-md bg-[rgba(45,44,60,0.5)] py-10 px-14 md:space-y-8 border-[2px] border-gray-400 grid place-items-center'>
+        <div className='md:w-[884px] w-full py-10 px-14 md:space-y-8 grid place-items-center'>
             <div className=''>
                 {/* {userData?.wallets[0]} */}
                 {/* <select className='p-3 rounded-[12px] border-[1px] bg-primary'>
@@ -120,7 +120,7 @@ const WalletPage = () => {
                 <IoCopyOutline onClick={()=> copyText(wallet?.address)} className='text-3xl text-white cursor-pointer' />
             </div>
 
-            <div className='md:w-[343px] md:space-y-6 space-y-3'>    
+            <div className='md:w-[543px] md:space-y-6 space-y-3'>    
                 {isWalletLoading ? (
                     <div className='grid place-items-center'>
                         <Loader />
@@ -142,25 +142,25 @@ const WalletPage = () => {
                 </div>}
                 <div className='flex items-center justify-between'>
                     <div className='flex flex-col gap-1 items-center cursor-pointer'>
-                        <div className='bg-white w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
+                        <div className='bg-lime-400 w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
                             <LuUpload className='text-3xl' />
                         </div>
                         <div className='text-white text-[13px] font-[400]'>Send</div>
                     </div>
                     <div className='flex flex-col gap-1 items-center cursor-pointer'>
-                        <div className='bg-white w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
+                        <div className='bg-lime-400 w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
                             <FiDownload className='text-3xl' />
                         </div>
                         <div className='text-white text-[13px] font-[400]'>Receive</div>
                     </div>
                     <div className='flex flex-col gap-1 items-center cursor-pointer'>
-                        <div className='bg-white w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
+                        <div className='bg-lime-400 w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
                             <IoCardOutline className='text-3xl' />
                         </div>
                         <div className='text-white text-[13px] font-[400]'>Buy</div>
                     </div>
                     <div className='flex flex-col gap-1 items-center cursor-pointer'>
-                        <div className='bg-white w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
+                        <div className='bg-lime-400 w-[60.79px] h-[48.13px] rounded-[16px] grid place-items-center'>
                             <TbExchange className='text-3xl' />
                         </div>
                         <div className='text-white text-[13px] font-[400]'>Exchange</div>
