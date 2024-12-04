@@ -56,7 +56,7 @@ const Button = ({
           ) : (
             <>
               {iconName ? (
-                <iconName />
+                <span>{iconName}</span>
               ) : (
                 <>
                   {imgPath && (
