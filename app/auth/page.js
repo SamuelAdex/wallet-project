@@ -32,8 +32,12 @@ const Page = () => {
 
   return (
     <div className='relative overflow-hidden flex md:flex-row flex-col bg-gradient-to-tr to-[#2B293D] from-[#000] h-[100vh]'>
-        <div className='flex-[1] bg-[#2B293D] md:flex hidden'>
-
+        <div className='flex-[1] bg-[#2B293D] flex-col items-center justify-center md:flex hidden'>
+            <div className='px-14'>
+                <div className='text-[60px] text-lime-400 font-extrabold'>BitWally</div>
+                <div className='md:text-[50px] md:leading-[50px] leading-10 text-white text-[40px] font-[700]'>Perfect for Keeping your crypto wallet.</div>
+            <p className='text-gray-400 mt-4 md:leading-[20px]'>Our advanced cold wallet protectsyour digital assets from online threats, providing top-notch security and peaceof mind.</p>
+            </div>
         </div>
         {auth == "login" ? <Login setAuth={setAuth} /> : auth == "register" ? <Register setAuth={setAuth} /> : ""}            
     </div>
@@ -57,7 +61,7 @@ function Register({setAuth}){
     <div className='md:w-[600px] backdrop-blur-lg p-3 bg-[#fff] border-[0.2px] md:h-full h-[100vh]'>
         <div className='md:p-10 p-6'>
             <div className='flex justify-between items-center'>
-              <div className='text-white md:text-[30px] font-[600] text-[20px]'>Sign Up</div>
+              <div className='text-black md:text-[30px] font-[600] text-[20px]'>Sign Up</div>
               <MdClose onClick={()=> router.push('/')} className="cursor-pointer text-2xl text-[#A3A3A3]" />
             </div>
 
@@ -91,7 +95,7 @@ function Login({setAuth}){
     <div className='md:w-[600px] backdrop-blur-lg p-3 bg-[#fff] border-[0.2px] md:h-full h-[100vh]'>
         <div className='md:p-10 p-6'>
             <div className='flex justify-between items-center'>
-              <div className='md:text-[30px] text-white text-[20px] font-[600]'>Login</div>
+              <div className='md:text-[30px] text-black text-[20px] font-[600]'>Login</div>
               <MdClose onClick={()=> router.push('/')} className="cursor-pointer text-2xl text-[#A3A3A3]" />
             </div>
 
