@@ -41,20 +41,16 @@ const Wallet = () => {
       password: ""
     });
 
-    // useEffect(()=>{
-    //     if(!userInfo.token){
-    //         router.push('/auth/login')
-    //     }
-    // }, [userInfo.token])
+    useEffect(()=>{
+        if(!userInfo.token){
+            router.push('/')
+        }
+    }, [userInfo.token])
 
     useEffect(()=>{
         getUserData();
     }, [isNewWallet])
 
-
-    useEffect(()=>{
-        getWalletById();
-    }, []);
 
     const handleWalletType = (val) =>{
         setWalletType(val)
@@ -73,7 +69,7 @@ const Wallet = () => {
           <div className='md:w-[884px] w-full rounded-[32px] py-10 px-14 md:space-y-8 border-[2px] border-primary bg-gradient-to-tr to-[rgba(45,44,60,0.8)] from-[rgba(45,44,60,0.8)]'>
 
             <div className='text-white text-center'>
-                <div className='md:font-[700] font-[600] md:text-[30px] text-[22px]'>Welcome to Tickbit Wallet</div>
+                <div className='md:font-[700] font-[600] md:text-[30px] text-[22px]'>Welcome to BitWally</div>
                 <div className='md:text-[13px] text-[10px] font-[500]'>Hold crypto assets in your custody. Track your portfolio performance, and interact with web 3 Dapps</div>
             </div>
 

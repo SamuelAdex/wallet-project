@@ -23,7 +23,7 @@ const Button = ({
           onClick={onBtnClick}
         >
           {loading === true ? (
-            <div className="">..loading</div>
+            <Loader />
           ) : (
             <>
               {iconName ? (
@@ -52,7 +52,7 @@ const Button = ({
           onClick={onBtnClick}
         >
           {loading === true ? (
-            <div className="">..loading</div>
+            <Loader />
           ) : (
             <>
               {iconName ? (
@@ -74,3 +74,9 @@ const Button = ({
 };
 
 export default Button;
+
+export function Loader(){
+  return (
+    <div className="loader animate-spin p-[8px] border-t-[2px] border-[2px] border-transparent rounded-[100%] border-t-white"></div>
+  )
+}

@@ -105,7 +105,7 @@ export const AppProvider = ({children})=>{
         localStorage.removeItem('userInfo')
         setUserInfo({})
         toast("Logged out Successfully")
-        router.push("/auth/login");
+        router.push("/");
     }
 
     const authUserRequest = axios.create({
@@ -240,11 +240,11 @@ export const AppProvider = ({children})=>{
     
 
     // Fetch user data on app load if token is present
-  useEffect(() => {
-    if (userInfo?.token) {
-      getUserData();
-    }
-  }, [userInfo?.token]);
+//   useEffect(() => {
+//     if (userInfo?.token) {
+//       getUserData();
+//     }
+//   }, [userInfo?.token]);
 
 
 
