@@ -7,6 +7,7 @@ import Button from '../Button';
 import { useRouter } from 'next/navigation';
 import { IoFingerPrint } from "react-icons/io5";
 import { AppContext } from '@/context/AppContext';
+import { MdWallet } from 'react-icons/md';
 
 const Header = ()=>{
     const router = useRouter();
@@ -40,6 +41,10 @@ const Header = ()=>{
                             />
                         </>
                 </div>
+                    )}
+
+                    {userInfo?.token && (
+                        <MdWallet className='text-3xl cursor-pointer text-white' onClick={()=> router.push("/wallet")} />
                     )}
             </div>
         </header>

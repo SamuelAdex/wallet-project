@@ -107,7 +107,7 @@ const WalletPage = () => {
             <MdLogout className='cursor-pointer text-black text-3xl' onClick={logout} />
         </div>
         {/* {isLoading && <Loader />} */}
-        <div className='md:w-[884px] w-full py-10 px-14 md:space-y-8 grid place-items-center'>
+        <div className='md:w-[884px] w-full py-10 px-14 md:space-y-8 grid place-items-center md:mt-auto mt-14'>
             <div className=''>
                 {/* {userData?.wallets[0]} */}
                 {/* <select className='p-3 rounded-[12px] border-[1px] bg-primary'>
@@ -123,7 +123,7 @@ const WalletPage = () => {
                 <IoCopyOutline onClick={()=> copyText(wallet?.address)} className='text-3xl text-white cursor-pointer' />
             </div>
 
-            <div className='md:w-[543px] md:space-y-6 space-y-3'>    
+            <div className='md:w-[543px] md:space-y-6 space-y-3 md:mt-auto mt-6'>    
                 {isWalletLoading ? (
                     <div className='grid place-items-center'>
                         <Loader />
